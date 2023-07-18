@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>signup form </title>
+    <script>
+        function validate(){
+            var usn=document.getElementById("USN").value;
+            var pawd=document.getElementById("password").value;
+            
+            var regx=/^1BM[a-zA-Z0-9]{7}/;
+            
+         
+            
+            if(!usn.match(regx))
+            {
+                alert("USN is Invalid");
+                return false;
+            }
+            if(pawd=="")
+            {
+                alert("Password is Invalid");
+                return false;
+            }
+            else
+             {
+                 window.location.assign("PAGE1.html");
+                 return true;
+             }
+             
+            
+            
+        }
+ </script>
+    <link rel="stylesheet" href="Signup.css">
+</head>
+<body>
+
+<diV class="sign-up-form">
+
+<h1>Sign Up now</h1>
+<form>
+
+          <input type="text" placeholder="Name" class="input-box"><br>
+         <input type="text" id="USN" placeholder="USN" class="input-box"><br>
+                 <input type="text" id="password" placeholder="Email" class="input-box"><br>
+                         <input type="text" placeholder="Password" class="input-box"><br><br>
+                         <button typr="button" class="signup-btn">Sign up</button>
+                         <hr>
+                         <br>
+                         <p>Do you already have an account ?<a href="PAGE0.html">Sign in</a></p>
+
+
+        </form>
+
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="PROJECT SUBMISSION">
+    <meta name="description" content="">
+    <title>PAGE0</title>
+    
+    <script>
+        function validate(){
+            var usn=document.getElementById("text").value;
+            var pawd=document.getElementById("pwd").value;
+            
+            var regx=/^1BM[a-zA-Z0-9]{7}/;
+            
+         
+            
+            if(!usn.match(regx))
+            {
+                alert("USN is Invalid");
+                return false;
+            }
+            if(pawd=="")
+            {
+                alert("Password is Invalid");
+                return false;
+            }
+            else
+             {
+                 window.location.assign("PAGE1.html");
+                 return true;
+             }
+             
+            
+            
+        }
+ </script>
+   
+
+    
+    <link rel="stylesheet" href="sportal.css" media="screen">
+<link rel="stylesheet" href="PAGE0.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="sportal.js" defer=""></script>
+    <meta name="generator" content="sportal 5.7.9, sportal.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700,800,900">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="PAGE0">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="en">
+    <section class="u-clearfix u-gradient u-section-1" id="sec-75ae">
+      <h2 class="u-align-center u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="">
+        <span style="font-weight: 700;">BMS College of Engineering</span>
+      </h2>
+      <img class="u-image u-image-contain u-image-round u-radius-10 u-image-1" src="images/bms_logo.png" alt="" data-image-width="1200" data-image-height="1189">
+      <h3 class="u-custom-font u-font-roboto-slab u-text u-text-body-alt-color u-text-default u-text-2" data-animation-name="customAnimationIn" data-animation-direction="" data-animation-duration="1000">STUDENT LOGIN<span style="font-weight: 700;"></span>
+      </h3>
+    
+      <div class="u-container-style u-group u-palette-4-dark-2 u-radius-10 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          
+          
+          
+         <form>
+             
+             <p class="u-text u-text-body-alt-color u-text-3">USN :</p>
+             <input id="text" placeholder="Enter USN" type="text" style="background-color:white;
+              border: solid 1px #6E6E6E;
+              height: 30px;
+              font-size:18px;
+              vertical-align:9px;color:#000000">
+              
+             
+              
+              
+                  
+        
+              <p class="u-text u-text-body-alt-color u-text-4">Password: </p>
+              <input id="pwd" placeholder="Enter password" type="text"
+                  style="background-color:white;
+                   border: solid 1px #6E6E6E;
+                   height: 30px;
+                   font-size:18px;
+                   vertical-align:9px;color:#000000" ><br>
+
+              
+              
+                 <button onclick="validate()" type="button"
+                   
+                     class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-dark-2 u-radius-6 u-btn-1"
+                     >Login</button>
+
+              </div>
+              </div>
+
+
+ <a  class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-light-2 u-palette-2-dark-2 u-radius-6 u-btn-1"
+                      href="Signup.html">Sign up</a>
+        
+                 </form>
+    <img class="u-image u-image-contain u-image-round u-radius-10 u-image-2" src="C:\Users\rosh2\OneDrive\Desktop\3rd sem\WAD\Project\WAD_finals\WAD_final\trouble.png" alt="" data-image-width="720" data-image-height="525">
+
+
+        
+        </section>
+
+   
+  
+</body></html>
