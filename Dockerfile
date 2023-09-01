@@ -13,7 +13,7 @@ RUN a2enmod rewrite
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
 # Copy the application files to the container
-COPY . /var/www/html
+COPY code/ /var/www/html
 
 # Set the working directory
 WORKDIR /var/www/html
