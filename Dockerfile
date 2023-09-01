@@ -1,14 +1,23 @@
-FROM s390x/httpd:2.4
-# Use a base image with Apache HTTP Server pre-installed
-FROM httpd:latest
+FROM php:7.4-apache
 
-# Copy your HTML file into the Apache web directory
-COPY index.html /usr/local/apache2/htdocs/
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    unzip \
+    && docker-php-ext-install zip pdo_mysql
 
-# Copy a custom Apache configuration file
-COPY custom-httpd.conf /usr/local/apache2/conf/httpd.conf
+# Enable Apache rewrite module
+RUN a2enmod rewrite
 
-# Expose port 80 (the default HTTP port for Apache)
+# Set the document root to Laravel's public directory
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+
+# Copy the application files to the container
+COPY . /var/www/html
+
+# Set the working directory
+WORKDIR /var/www/html
+
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+COPY  code/ /var/www/html/
 EXPOSE 80
-
-COPY ./public-html/ /usr/local/apache2/htdocs/
