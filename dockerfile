@@ -4,16 +4,17 @@ FROM node:14-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the HTML, CSS, and JavaScript files into the container
-COPY index.html /app/
-COPY styles.css /app/
-COPY script.js /app/
+# Copy package.json and package-lock.json (if available) to install dependencies
+COPY package*.json ./
 
-# Expose a port for your application (e.g., 80)
+# Install application dependencies
+RUN npm install
+
+# Copy the HTML, CSS, and JavaScript files into the container
+COPY index.html styles.css script.js ./
+
+# Expose the port your application is running on (adjust if needed)
 EXPOSE 80
 
-# Install a simple HTTP server using npm
-RUN npm install -g http-server
-
 # Start the HTTP server when the container runs
-CMD ["http-server", "-p", "80"]
+CMD ["npm", "start"]
