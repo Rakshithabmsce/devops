@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # Change this to your default branch if necessary
+      - main
 
 jobs:
   build:
@@ -16,11 +16,11 @@ jobs:
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
-        username: ${{ rakshithadn1234 }}
-        password: ${{ nasunara1234 }}
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker image
-      run: docker build -t your-docker-username/your-repo-name:${{ github.sha }} .
+      run: docker build -t rakshithadn1234/nasunara1234:${{ github.sha }} .
 
     - name: Push Docker image
-      run: docker push your-docker-username/your-repo-name:${{ github.sha }}
+      run: docker push rakshithadn1234/nasunara1234:${{ github.sha }}
